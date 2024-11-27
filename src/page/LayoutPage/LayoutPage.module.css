@@ -1,0 +1,42 @@
+:root {
+    --border-radius: 16px;
+}
+
+.layout {
+    display: flex;
+    gap: 5px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+.header {
+    text-align: center;
+    margin-bottom: 5px;
+    height: 59px;
+    border-radius: var(--border-radius);
+    background: #e8e6e6;
+}
+.content {
+    text-align: center;
+    min-height: calc(100vh - 128px);
+    line-height: 120px;
+    border-radius: var(--border-radius);
+    background: #e8e6e6;
+}
+.sider {
+    text-align: center;
+    line-height: 120px;
+    background: #fff;
+    border-radius: var(--border-radius);
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 59px;
+    margin-top: 5px;
+    border-radius: var(--border-radius);
+    /*background: #e8e6e6;*/
+}
