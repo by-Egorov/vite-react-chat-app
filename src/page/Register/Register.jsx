@@ -67,34 +67,44 @@ const Register = () => {
       )}
       <Form.Item
         name='email'
-        rules={[
-          {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
-          {
-            required: true,
-            message: 'Please input your E-mail!',
-          },
-          {
-            validator: async (_, value) => {
-              if (!value) {
-                return Promise.reject('Please input your E-mail!')
-              }
-
-              // Проверка, если это не логин (isLogin) и пользователь не существует
-
-              const userExists = users.some(user => user.email === value) // Проверка на существование пользователя
-              if (!userExists) {
-                return Promise.reject(
-                  'Пользователь с таким email не зарегистрирован',
-                )
-              }
-
-              return Promise.resolve() // Все в порядке
+        rules={location.pathname === '/login' ? [
+                  {
+                    type: 'email',
+                    message: 'The input is not valid E-mail!',
+                  },
+            {
+              required: true,
+              message: 'Please input your E-mail!',
             },
-          },
-        ]}
+        {
+          validator: async (_, value) => {
+          if (!value) {
+          return Promise.reject('Please input your E-mail!')
+        }
+
+          // Проверка, если это не логин (isLogin) и пользователь не существует
+
+          const userExists = users.some(user => user.email === value) // Проверка на существование пользователя
+          if (!userExists) {
+          return Promise.reject(
+          'Пользователь с таким email не зарегистрирован',
+          )
+        }
+
+          return Promise.resolve() // Все в порядке
+        },
+        },
+          ] : [
+        {
+          type: 'email',
+          message: 'The input is not valid E-mail!',
+        },
+        {
+          required: true,
+          message: 'Please input your E-mail!',
+        },
+
+          ]}
       >
         <Input prefix={<UserOutlined />} placeholder='E-mail' />
       </Form.Item>
