@@ -3,7 +3,7 @@ import { Avatar } from 'antd'
 import { useSelector } from 'react-redux'
 const MyAvatar = ({ id }) => {
   const users = useSelector(state => state.users.users)
-  let user = users.find(user => user.id === id)
+  const user = users.find(user => user.id === id)
   return (
     <Avatar.Group>
       <Avatar

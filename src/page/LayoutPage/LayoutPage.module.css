@@ -19,7 +19,7 @@
 }
 .content {
     text-align: center;
-    min-height: calc(100vh - 128px);
+    min-height: calc(100vh - 138px);
     line-height: 120px;
     border-radius: var(--border-radius);
     background: #e8e6e6;
