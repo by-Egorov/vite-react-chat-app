@@ -1,8 +1,9 @@
 import React from 'react'
-import { Avatar } from "antd";
-import {useSelector} from "react-redux";
-const MyAvatar = () => {
-    const users = useSelector(state => state.users.users)
+import { Avatar } from 'antd'
+import { useSelector } from 'react-redux'
+const MyAvatar = ({ id }) => {
+  const users = useSelector(state => state.users.users)
+  let user = users.find(user => user.id === id)
   return (
     <Avatar.Group>
       <Avatar
@@ -10,7 +11,7 @@ const MyAvatar = () => {
           backgroundColor: '#f56a00',
         }}
       >
-        K
+        {user.username[0].toUpperCase()}
       </Avatar>
     </Avatar.Group>
   )

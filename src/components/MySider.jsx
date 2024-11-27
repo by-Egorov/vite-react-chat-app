@@ -21,7 +21,7 @@ const MySider = () => {
           <Skeleton avatar title={false} loading={item.loading} active>
             <List.Item.Meta
               style={{ alignItems: 'center', textAlign: 'start', padding: 5 }}
-              avatar={<MyAvatar />}
+              avatar={<MyAvatar id={item.id} />}
               title={item.username}
               description={item.email}
             />
